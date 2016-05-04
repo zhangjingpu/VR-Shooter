@@ -2,28 +2,37 @@
 using System.Collections;
 
 
+//Attach this to both controllers
 public class StickController : MonoBehaviour
 {
     //Get Input keys
     public Valve.VR.EVRButtonId GripyButton = Valve.VR.EVRButtonId.k_EButton_Grip;
     public Valve.VR.EVRButtonId TriggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
+    //Untested
+    public Valve.VR.EVRButtonId MenuButton = Valve.VR.EVRButtonId.k_EButton_ApplicationMenu;
+    public Valve.VR.EVRButtonId AButton = Valve.VR.EVRButtonId.k_EButton_A;
+    public Valve.VR.EVRButtonId A0Button = Valve.VR.EVRButtonId.k_EButton_Axis0;
+    public Valve.VR.EVRButtonId A1Button = Valve.VR.EVRButtonId.k_EButton_Axis1;
+    public Valve.VR.EVRButtonId A2Button = Valve.VR.EVRButtonId.k_EButton_Axis2;
+    public Valve.VR.EVRButtonId A3Button = Valve.VR.EVRButtonId.k_EButton_Axis3;
+    public Valve.VR.EVRButtonId A4Button = Valve.VR.EVRButtonId.k_EButton_Axis4;
+    public Valve.VR.EVRButtonId BackButton = Valve.VR.EVRButtonId.k_EButton_Dashboard_Back;
+    public Valve.VR.EVRButtonId DDownButton = Valve.VR.EVRButtonId.k_EButton_DPad_Down;
+    public Valve.VR.EVRButtonId DLeftButton = Valve.VR.EVRButtonId.k_EButton_DPad_Left;
+    public Valve.VR.EVRButtonId DRightButton = Valve.VR.EVRButtonId.k_EButton_DPad_Right;
+    public Valve.VR.EVRButtonId DUpButton = Valve.VR.EVRButtonId.k_EButton_DPad_Up;
+    public Valve.VR.EVRButtonId MaxButton = Valve.VR.EVRButtonId.k_EButton_Max;
+    public Valve.VR.EVRButtonId TouchpadButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad;
+    public Valve.VR.EVRButtonId SystemButton = Valve.VR.EVRButtonId.k_EButton_System;
 
     //Get the controller
+    [HideInInspector]
     public SteamVR_Controller.Device Controller { get { return SteamVR_Controller.Input((int)TrackedObj.index); } }
     private SteamVR_TrackedObject TrackedObj;
-
-    public GameObject GrabedObject;
-
-    private Vector3 lastPos;
-
-    [HideInInspector]
-    public Vector3 vel;
-
 
     void Start ()
     {
         TrackedObj = GetComponent<SteamVR_TrackedObject>();
-        lastPos = transform.position;
 	}
 
 	void Update ()
@@ -34,32 +43,12 @@ public class StickController : MonoBehaviour
             return;
         }
 
-        vel = (transform.position - lastPos) / Time.deltaTime;
-        lastPos = transform.position;
-
         ManageInputs();
     }
 
     //Interactions
     void ManageInputs()
     {
-        //Grab
-        if(GrabedObject != null)
-        {
-            if (Controller.GetPress(GripyButton) && GrabedObject != null)
-            {
-                if (GrabedObject.GetComponent<Rigidbody>() != null) GrabedObject.GetComponent<Rigidbody>().isKinematic = true;
-                GrabedObject.transform.parent = transform; //Turns to a child also
-            }
-            else
-            {
-                GrabedObject.transform.SetParent(null);
-                GrabedObject.GetComponent<Rigidbody>().isKinematic = false;
-                GrabedObject.GetComponent<Rigidbody>().AddForce(vel * 100);
-                GrabedObject = null;
-            }
-
-        }
         //DebugInputs();
     }
 
@@ -73,21 +62,22 @@ public class StickController : MonoBehaviour
         if (Controller.GetPressDown(TriggerButton)) print("Trigger Button Down");
         if (Controller.GetPressUp(TriggerButton)) print("Trigger Button Up");
         if (Controller.GetPress(TriggerButton)) print("Trigger Button Pressed"); //held
-    }
 
-    //Collisions
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Grabable")) GrabedObject = other.gameObject;
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        //if (other.gameObject.layer == LayerMask.NameToLayer("Grabable")) GrabedObject = other.gameObject;
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        //if (other.gameObject.layer == LayerMask.NameToLayer("Grabable")) GrabedObject = null;
+        //Untested
+        if (Controller.GetPressDown(MenuButton)) print("MenuButton");
+        if (Controller.GetPressDown(AButton)) print("AButton");
+        if (Controller.GetPressDown(A0Button)) print("A0Button");
+        if (Controller.GetPressDown(A1Button)) print("A1Button");
+        if (Controller.GetPressDown(A2Button)) print("A2Button");
+        if (Controller.GetPressDown(A3Button)) print("A3Button");
+        if (Controller.GetPressDown(A4Button)) print("A4Button");
+        if (Controller.GetPressDown(BackButton)) print("BackButton");
+        if (Controller.GetPressDown(DDownButton)) print("DDownButton");
+        if (Controller.GetPressDown(DLeftButton)) print("DLeftButton");
+        if (Controller.GetPressDown(DRightButton)) print("DRightButton");
+        if (Controller.GetPressDown(DUpButton)) print("DUpButton");
+        if (Controller.GetPressDown(MaxButton)) print("MaxButton");
+        if (Controller.GetPressDown(TouchpadButton)) print("TouchpadButton");
+        if (Controller.GetPressDown(SystemButton)) print("SystemButton");
     }
 }

@@ -71,7 +71,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Environment\GlobalVars.cs" />
     <Compile Include="Assets\Scripts\Environment\LevelTracker.cs" />
+    <Compile Include="Assets\Scripts\Vive\Grab.cs" />
+    <Compile Include="Assets\Scripts\Vive\GrabableItem.cs" />
     <Compile Include="Assets\Scripts\Vive\StickController.cs" />
+    <Compile Include="Assets\Scripts\Vive\TestMultiCollisions.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
