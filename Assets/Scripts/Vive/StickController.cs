@@ -5,14 +5,14 @@ using System.Collections;
 public class StickController : MonoBehaviour
 {
     //Get Input keys
-    private Valve.VR.EVRButtonId GripyButton = Valve.VR.EVRButtonId.k_EButton_Grip;
-    private Valve.VR.EVRButtonId TriggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
+    public Valve.VR.EVRButtonId GripyButton = Valve.VR.EVRButtonId.k_EButton_Grip;
+    public Valve.VR.EVRButtonId TriggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
 
     //Get the controller
-    private SteamVR_Controller.Device Controller { get { return SteamVR_Controller.Input((int)TrackedObj.index); } }
+    public SteamVR_Controller.Device Controller { get { return SteamVR_Controller.Input((int)TrackedObj.index); } }
     private SteamVR_TrackedObject TrackedObj;
 
-    private GameObject GrabedObject;
+    public GameObject GrabedObject;
 
     private Vector3 lastPos;
 
@@ -56,7 +56,6 @@ public class StickController : MonoBehaviour
                 GrabedObject.transform.SetParent(null);
                 GrabedObject.GetComponent<Rigidbody>().isKinematic = false;
                 GrabedObject.GetComponent<Rigidbody>().AddForce(vel * 100);
-                Debug.Log(vel);
                 GrabedObject = null;
             }
 
