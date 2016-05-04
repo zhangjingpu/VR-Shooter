@@ -6,6 +6,14 @@ using System.Collections;
 public class StickController : MonoBehaviour
 {
     //Get Input keys
+<<<<<<< HEAD
+    protected Valve.VR.EVRButtonId GripyButton = Valve.VR.EVRButtonId.k_EButton_Grip;
+    protected Valve.VR.EVRButtonId TriggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
+    protected Valve.VR.EVRButtonId MenuButton = Valve.VR.EVRButtonId.k_EButton_ApplicationMenu;
+
+    //Get the controller
+    protected SteamVR_Controller.Device Controller { get { return SteamVR_Controller.Input((int)TrackedObj.index); } }
+=======
     public Valve.VR.EVRButtonId GripyButton = Valve.VR.EVRButtonId.k_EButton_Grip;
     public Valve.VR.EVRButtonId TriggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
     //Untested
@@ -28,6 +36,7 @@ public class StickController : MonoBehaviour
     //Get the controller
     [HideInInspector]
     public SteamVR_Controller.Device Controller { get { return SteamVR_Controller.Input((int)TrackedObj.index); } }
+>>>>>>> 496613c649dbb35cc940e357252fc9d49637204e
     private SteamVR_TrackedObject TrackedObj;
 
     void Start ()
