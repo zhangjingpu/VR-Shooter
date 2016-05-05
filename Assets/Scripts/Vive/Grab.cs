@@ -43,7 +43,6 @@ public class Grab : MonoBehaviour
         {
             if (Stick.Controller.GetPress(Stick.GripyButton))
             {
-<<<<<<< HEAD
                 //Turns to a child
                 GrabedObject.transform.parent = transform;
                 //Set the point of collision at the start of the new child
@@ -60,12 +59,6 @@ public class Grab : MonoBehaviour
                 GrabedObject.GetComponent<Rigidbody>().velocity = FollowVelocity;
                 GrabedObject.GetComponent<Rigidbody>().angularVelocity = new Vector3(0, 0, 0);
                 GrabedObject.transform.rotation = transform.rotation;
-=======
-                GrabedObject.GetComponent<Rigidbody>().isKinematic = true;
-                //GrabedObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-                //GrabedObject.GetComponent<Rigidbody>().useGravity = false;
-                GrabedObject.transform.parent = transform; //Turns to a child also
->>>>>>> origin/master
             }
             else
             {
