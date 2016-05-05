@@ -21,7 +21,7 @@ public class Grab : MonoBehaviour
 
     void Update()
     {
-
+        //Tracks the velocity in which will be applied to the throw
         vel = (transform.position - lastPos) / Time.deltaTime;
         lastPos = transform.position;
 
@@ -34,12 +34,9 @@ public class Grab : MonoBehaviour
         {
             if (Stick.Controller.GetPress(Stick.GripyButton) && GrabedObject != null)
             {
-                if (GrabedObject.GetComponent<Rigidbody>() != null)
-                {
-                    GrabedObject.GetComponent<Rigidbody>().isKinematic = true;
-                    GrabedObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-                    GrabedObject.GetComponent<Rigidbody>().useGravity = false;
-                }
+                GrabedObject.GetComponent<Rigidbody>().isKinematic = true;
+                //GrabedObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                //GrabedObject.GetComponent<Rigidbody>().useGravity = false;
                 GrabedObject.transform.parent = transform; //Turns to a child also
             }
             else
@@ -56,7 +53,10 @@ public class Grab : MonoBehaviour
     //Collisions
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Grabable")) GrabedObject = other.gameObject;
+        if (other.gameObject.layer == LayerMask.NameToLayer("Grabable"))
+        {
+            if (other.GetComponent<Rigidbody>() != null) GrabedObject = other.gameObject;
+        }
     }
 
     void OnTriggerStay(Collider other)
