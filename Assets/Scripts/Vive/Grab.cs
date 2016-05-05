@@ -4,12 +4,21 @@ using System.Collections.Generic; //For List
 
 public class Grab : MonoBehaviour
 {
+    //The object that is grabed
     public GameObject GrabedObject;
 
-    private Vector3 lastPos;
+    //Maintaining physics for grabed objects
+    public float FollowSmoothness = 0.01f;
+    private Vector3 GrabedObjectStart;
+    private Vector3 FollowVelocity = Vector3.zero;
+    private bool SetOnce = true;
 
+    //Keep track of throw velocity
+    private Vector3 lastPos;
     [HideInInspector]
     public Vector3 vel;
+
+    //Get access to the controller
     [HideInInspector]
     public StickController Stick;
 
@@ -19,9 +28,9 @@ public class Grab : MonoBehaviour
         lastPos = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-
+        //Tracks the velocity in which will be applied to the throw
         vel = (transform.position - lastPos) / Time.deltaTime;
         lastPos = transform.position;
 
@@ -32,21 +41,31 @@ public class Grab : MonoBehaviour
     {
         if (GrabedObject != null)
         {
-            if (Stick.Controller.GetPress(Stick.GripyButton) && GrabedObject != null)
+            if (Stick.Controller.GetPress(Stick.GripyButton))
             {
-                if (GrabedObject.GetComponent<Rigidbody>() != null)
+                //Turns to a child
+                GrabedObject.transform.parent = transform;
+                //Set the point of collision at the start of the new child
+                if(SetOnce == true)
                 {
-                    GrabedObject.GetComponent<Rigidbody>().isKinematic = true;
-                    GrabedObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-                    GrabedObject.GetComponent<Rigidbody>().useGravity = false;
+                    GrabedObjectStart = GrabedObject.transform.localPosition;
+                    SetOnce = false;
                 }
-                GrabedObject.transform.parent = transform; //Turns to a child also
+                //Clamps 0 - 1
+                FollowSmoothness = Mathf.Clamp01(FollowSmoothness);
+                Vector3 Mod = Vector3.SmoothDamp(GrabedObject.transform.localPosition, GrabedObjectStart, ref FollowVelocity, FollowSmoothness);
+
+                GrabedObject.GetComponent<Rigidbody>().useGravity = false;
+                GrabedObject.GetComponent<Rigidbody>().velocity = FollowVelocity;
+                GrabedObject.GetComponent<Rigidbody>().angularVelocity = new Vector3(0, 0, 0);
+                GrabedObject.transform.rotation = transform.rotation;
             }
             else
             {
                 GrabedObject.transform.SetParent(null);
-                GrabedObject.GetComponent<Rigidbody>().isKinematic = false;
+                GrabedObject.GetComponent<Rigidbody>().useGravity = true;
                 GrabedObject.GetComponent<Rigidbody>().AddForce(vel * 100);
+                SetOnce = true;
                 GrabedObject = null;
             }
 
@@ -56,7 +75,10 @@ public class Grab : MonoBehaviour
     //Collisions
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Grabable")) GrabedObject = other.gameObject;
+        if (other.gameObject.layer == LayerMask.NameToLayer("Grabable"))
+        {
+            if (other.GetComponent<Rigidbody>() != null) GrabedObject = other.gameObject;
+        }
     }
 
     void OnTriggerStay(Collider other)

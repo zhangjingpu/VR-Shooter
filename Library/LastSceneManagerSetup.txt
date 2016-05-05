@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Tests/Test.unity
-=======
-- path: Assets/Scenes/Connor/Items.unity
->>>>>>> 1a31a26734b0c482936bdbe9f30a00e0302c17b5
   isLoaded: 1
   isActive: 1
