@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR-Shooter-master.CSharp.Plugins", "VR-Shooter-master.CSharp.Plugins.csproj", "{90F30EA6-F74F-5B3A-DA69-5092448248CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR-Shooter-master.CSharp", "VR-Shooter-master.CSharp.csproj", "{4918BA0D-7A03-C906-4EE7-FA93B7AAAAA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR-Shooter-master.CSharp.Editor", "VR-Shooter-master.CSharp.Editor.csproj", "{88BDC5AB-E10A-60A8-5631-5160DF234EDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90F30EA6-F74F-5B3A-DA69-5092448248CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F30EA6-F74F-5B3A-DA69-5092448248CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F30EA6-F74F-5B3A-DA69-5092448248CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F30EA6-F74F-5B3A-DA69-5092448248CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4918BA0D-7A03-C906-4EE7-FA93B7AAAAA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4918BA0D-7A03-C906-4EE7-FA93B7AAAAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4918BA0D-7A03-C906-4EE7-FA93B7AAAAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4918BA0D-7A03-C906-4EE7-FA93B7AAAAA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88BDC5AB-E10A-60A8-5631-5160DF234EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88BDC5AB-E10A-60A8-5631-5160DF234EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88BDC5AB-E10A-60A8-5631-5160DF234EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88BDC5AB-E10A-60A8-5631-5160DF234EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
