@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic; //For List
 
-public class Grab : MonoBehaviour
+public class Grab : StickController
 {
     //The object that is grabed
     public GameObject GrabedObject;
