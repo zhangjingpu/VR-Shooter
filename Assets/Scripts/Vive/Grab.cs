@@ -2,6 +2,22 @@
 using System.Collections;
 using System.Collections.Generic; //For List
 
+
+/*
+    Author: Tung Nguyen
+    Purpose: Basic grab behavior for picking up and throwing objects.
+
+    Last Edit: A. Connor Adam
+    Reason: Small edit to ease intergration into StickController class
+
+    TODO:
+        -Debug
+        -Integrate into StickController 
+*/
+
+
+//Grab should be integrated as a standard part of the StickController class, just to simplify.
+//...But only after it works.
 public class Grab : StickController
 {
     //The object that is grabed
@@ -17,10 +33,6 @@ public class Grab : StickController
     private Vector3 lastPos;
     [HideInInspector]
     public Vector3 vel;
-
-    //Get access to the controller
-    [HideInInspector]
-    public StickController Stick;
 
     void Start()
     {
@@ -41,7 +53,7 @@ public class Grab : StickController
     {
         if (GrabedObject != null)
         {
-            if (Stick.Controller.GetPress(Stick.GripyButton))
+            if (isHeld(ActivatorButton.GRIPPY))
             {
                 //Turns to a child
                 GrabedObject.transform.parent = transform;

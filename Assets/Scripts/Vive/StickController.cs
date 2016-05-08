@@ -1,42 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//TODO:
 /*
-    I'll have to come in here and make an actual interface for this class,
-        since it looks like a right PITA to use atm.
+    Author: Tung Nguyen
+    Purpose: Holds all the data and basic behavior for both controllers.
 
-    -An enum for button differentiation, with automatic pressed resolution.
+    Last Edit: A. Connor Adam
+    Reason: Added rudimentary control interface for future scripts. 
+
+    TODO:
+        -Add grab as part of this class after it has been de-bugged
+        -Add ability for different controls on the sticks
+        -Add different controller layouts
 */
+
 
 //Attach this to both controllers
 public class StickController : MonoBehaviour
 {
     //Get Input keys
-    public Valve.VR.EVRButtonId GripyButton     = Valve.VR.EVRButtonId.k_EButton_Grip;               //Side buttons
-    public Valve.VR.EVRButtonId TriggerButton   = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;    //Obvious
+    protected Valve.VR.EVRButtonId GripyButton     = Valve.VR.EVRButtonId.k_EButton_Grip;               //Side buttons
+    protected Valve.VR.EVRButtonId TriggerButton   = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;    //Obvious
     //Untested
-    public Valve.VR.EVRButtonId MenuButton      = Valve.VR.EVRButtonId.k_EButton_ApplicationMenu;    //Above TP?
-    public Valve.VR.EVRButtonId AButton         = Valve.VR.EVRButtonId.k_EButton_A;                  //? Perhaps dashboard only.
-    public Valve.VR.EVRButtonId A0Button        = Valve.VR.EVRButtonId.k_EButton_Axis0;              //? Perhaps dashboard only.
-    public Valve.VR.EVRButtonId A1Button        = Valve.VR.EVRButtonId.k_EButton_Axis1;              //? Perhaps dashboard only.
-    public Valve.VR.EVRButtonId A2Button        = Valve.VR.EVRButtonId.k_EButton_Axis2;              //? Perhaps dashboard only.
-    public Valve.VR.EVRButtonId A3Button        = Valve.VR.EVRButtonId.k_EButton_Axis3;              //? Perhaps dashboard only.
-    public Valve.VR.EVRButtonId A4Button        = Valve.VR.EVRButtonId.k_EButton_Axis4;              //? Perhaps dashboard only.
-    public Valve.VR.EVRButtonId BackButton      = Valve.VR.EVRButtonId.k_EButton_Dashboard_Back;     //? Perhaps dashboard only.
-    public Valve.VR.EVRButtonId DDownButton     = Valve.VR.EVRButtonId.k_EButton_DPad_Down;          //Obvious
-    public Valve.VR.EVRButtonId DLeftButton     = Valve.VR.EVRButtonId.k_EButton_DPad_Left;          //Obvious
-    public Valve.VR.EVRButtonId DRightButton    = Valve.VR.EVRButtonId.k_EButton_DPad_Right;         //Obvious
-    public Valve.VR.EVRButtonId DUpButton       = Valve.VR.EVRButtonId.k_EButton_DPad_Up;            //Obvious
-    public Valve.VR.EVRButtonId MaxButton       = Valve.VR.EVRButtonId.k_EButton_Max;                //?
-    public Valve.VR.EVRButtonId TouchpadButton  = Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad;   //Obvious
-    public Valve.VR.EVRButtonId SystemButton    = Valve.VR.EVRButtonId.k_EButton_System;             //Below TP?
+    protected Valve.VR.EVRButtonId MenuButton      = Valve.VR.EVRButtonId.k_EButton_ApplicationMenu;    //Above TP?
+    protected Valve.VR.EVRButtonId AButton         = Valve.VR.EVRButtonId.k_EButton_A;                  //? Perhaps dashboard only.
+    protected Valve.VR.EVRButtonId A0Button        = Valve.VR.EVRButtonId.k_EButton_Axis0;              //? Perhaps dashboard only.
+    protected Valve.VR.EVRButtonId A1Button        = Valve.VR.EVRButtonId.k_EButton_Axis1;              //? Perhaps dashboard only.
+    protected Valve.VR.EVRButtonId A2Button        = Valve.VR.EVRButtonId.k_EButton_Axis2;              //? Perhaps dashboard only.
+    protected Valve.VR.EVRButtonId A3Button        = Valve.VR.EVRButtonId.k_EButton_Axis3;              //? Perhaps dashboard only.
+    protected Valve.VR.EVRButtonId A4Button        = Valve.VR.EVRButtonId.k_EButton_Axis4;              //? Perhaps dashboard only.
+    protected Valve.VR.EVRButtonId BackButton      = Valve.VR.EVRButtonId.k_EButton_Dashboard_Back;     //? Perhaps dashboard only.
+    protected Valve.VR.EVRButtonId DDownButton     = Valve.VR.EVRButtonId.k_EButton_DPad_Down;          //Obvious
+    protected Valve.VR.EVRButtonId DLeftButton     = Valve.VR.EVRButtonId.k_EButton_DPad_Left;          //Obvious
+    protected Valve.VR.EVRButtonId DRightButton    = Valve.VR.EVRButtonId.k_EButton_DPad_Right;         //Obvious
+    protected Valve.VR.EVRButtonId DUpButton       = Valve.VR.EVRButtonId.k_EButton_DPad_Up;            //Obvious
+    protected Valve.VR.EVRButtonId MaxButton       = Valve.VR.EVRButtonId.k_EButton_Max;                //?
+    protected Valve.VR.EVRButtonId TouchpadButton  = Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad;   //Obvious
+    protected Valve.VR.EVRButtonId SystemButton    = Valve.VR.EVRButtonId.k_EButton_System;             //Below TP?
 
     //Get the controller
     [HideInInspector]
     public SteamVR_Controller.Device Controller { get { return SteamVR_Controller.Input((int)TrackedObj.index); } }
     private SteamVR_TrackedObject TrackedObj;
-
+    //how long a given button has been held.
     private float[] t_HeldFor = { 0.00f, 0.00f, 0.00f, 0.00f, 0.00f, 0.00f, 0.00f, 0.00f, 0.00f };
 
     /*
@@ -48,7 +54,7 @@ public class StickController : MonoBehaviour
     /// <summary>
     /// Usable in-game buttons for Vive
     /// </summary>
-    protected enum ActivatorButton
+    public enum ActivatorButton
     { //on t_HeldFor....
         NONE, // 0
         MENU, // 1
@@ -58,27 +64,12 @@ public class StickController : MonoBehaviour
         TP_CENTER //8
     }
 
-
-    void Start ()
-    {
-        TrackedObj = GetComponent<SteamVR_TrackedObject>();
-	}
-
-	void Update ()
-    {
-	    if(Controller == null)
-        {
-            Debug.Log("Controller is not initialized");
-            return;
-        }
-
-        ManageInputs();
-    }
+    /* Public state getters */
 
     /// <summary>
     /// Returns true if "ab" was pressed.
     /// </summary>
-    bool isPressed(ActivatorButton ab)
+    public bool isPressed(ActivatorButton ab)
     {
         switch(ab)
         {
@@ -96,7 +87,7 @@ public class StickController : MonoBehaviour
     /// <summary>
     /// Returns true if "ab" was released.
     /// </summary>
-    bool isReleased(ActivatorButton ab)
+    public bool isReleased(ActivatorButton ab)
     {
         switch (ab)
         {
@@ -112,9 +103,10 @@ public class StickController : MonoBehaviour
         }
     }
     /// <summary>
-    /// Returns true if "ab" has been held for longer than the passed float.
+    /// Returns true if "ab" has been held for longer than the desired time.
+    /// By default, it just looks to see if it's held at all.
     /// </summary>
-    bool isHeld(ActivatorButton ab, float t_TimeHeld)
+    public bool isHeld(ActivatorButton ab, float t_TimeHeld = 0.0f)
     {
         switch (ab)
         {
@@ -139,6 +131,23 @@ public class StickController : MonoBehaviour
         return false;
     }
 
+    /* Updaters and Managers */
+
+    void Start()
+    {
+        TrackedObj = GetComponent<SteamVR_TrackedObject>();
+    }
+
+    void Update()
+    {
+        if (Controller == null)
+        {
+            Debug.Log("Controller is not initialized");
+            return;
+        }
+
+        ManageInputs();
+    }
 
     void UpdateInputs()
     {

@@ -1,6 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+    Author: Tung Nguyen
+    Purpose: Script for equippable items
+    
+    Last Edit: N/A
+    Reason: N/A
+    
+    TODO:
+        - N/A 
+*/
+
+
 //Attach to the equipable object
 //Object has to stay solid
 public class EquipObject : MonoBehaviour

@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -79,8 +73,6 @@
     <Compile Include="Assets\Scripts\Backup\GrabableItem1.cs" />
     <Compile Include="Assets\Scripts\Environment\GlobalVars.cs" />
     <Compile Include="Assets\Scripts\Environment\LevelTracker.cs" />
-    <Compile Include="Assets\Scripts\Items\GunController.cs" />
-    <Compile Include="Assets\Scripts\Items\UseableObject.cs" />
     <Compile Include="Assets\Scripts\Test\ObjectGrabSimulation.cs" />
     <Compile Include="Assets\Scripts\Vive\EquipObject.cs" />
     <Compile Include="Assets\Scripts\Vive\Grab.cs" />

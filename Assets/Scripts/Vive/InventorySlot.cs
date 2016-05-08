@@ -1,9 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+    Author: Tung Nguyen
+    Purpose: Inventory behabior and data
+    
+    Last Edit: N/A
+    Reason: N/A
+
+    TODO:
+        -Make work
+*/
+
 //Attach to the ghost slot (the inventory)
 //Object has to have triggered check on collider
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : StickController
 {
     //Has to be the same ID as the held item for it to be equiped to the slot (used for defining different types of slots ie: sword slot, gun slot, etc)
     public int SlotID = 0;
