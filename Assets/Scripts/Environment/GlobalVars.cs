@@ -21,6 +21,22 @@ Last edited: Tung Nguyen
 
 public class GlobalVars : MonoBehaviour
 {
+    //Stats
+    public float MaxHealth = 100;
+    public float CurrentHealth = 100;
+    public float MaxEnergy = 100;
+    public float CurrentEnergy = 100;
+
+    //Timers
+    public bool StartHealthRegen = false; //When taking damage, set to false
+    public float HealthRegenStartTimer = 0; //When taking damage, set to 0
+    public float HealthRegenStartDelay = 4.0f;
+    public float HealthRegenTimer = 0;
+    public float HealthRegenDelay = 0.1f;
+
+    public float EnergyRegenTimer = 0;
+    public float EnergyRegenDelay = 0.2f;
+
     //Misc
     public bool Save = false;
     public bool Load = false;
@@ -38,6 +54,53 @@ public class GlobalVars : MonoBehaviour
 
     void Update()
     {
+        //Health Regen
+        if(CurrentHealth < MaxHealth)
+        {
+            if (StartHealthRegen == false)
+            {
+                HealthRegenStartTimer += Time.deltaTime;
+                if(HealthRegenStartTimer >= HealthRegenStartDelay)
+                {
+                    HealthRegenStartTimer = 0;
+                    StartHealthRegen = true;
+                }
+            }
+
+            if (StartHealthRegen == true)
+            {
+                HealthRegenTimer += Time.deltaTime;
+                if (HealthRegenTimer >= HealthRegenDelay)
+                {
+                    CurrentHealth += 5;
+                    EnergyRegenTimer = 0;
+                }
+            }
+        }
+        else
+        {
+            if (StartHealthRegen == true)
+            {
+                HealthRegenStartTimer = 0;
+                StartHealthRegen = false;
+            }
+        }
+        if (CurrentHealth > MaxHealth) CurrentHealth = MaxHealth; //Limit
+        if (CurrentHealth < 0) CurrentHealth = 0; //Limit
+
+        //Energy Regen
+        if(CurrentEnergy < MaxEnergy)
+        {
+            EnergyRegenTimer += Time.deltaTime;
+            if(EnergyRegenTimer >= EnergyRegenDelay)
+            {
+                CurrentEnergy += 5;
+                EnergyRegenTimer = 0;
+            }
+        }
+        if (CurrentEnergy > MaxEnergy) CurrentEnergy = MaxEnergy; //Limit
+        if (CurrentEnergy < 0) CurrentEnergy = 0; //Limit
+
         //Debug Toggle
         if (Input.GetButtonDown("Debug"))
         {
