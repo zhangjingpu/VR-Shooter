@@ -1,6 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+<<<<<<< HEAD
+=======
+/*
+    Author: Tung Nguyen
+    Purpose: Proxy controllers for testing with out the vive (Gold Star to Tung!!)
+
+    Last Edit: N/A
+    Reason: N/A
+
+    TODO:
+        -N/A
+*/
+
+>>>>>>> origin/master
 public class ObjectGrabSimulation : MonoBehaviour
 {
     public GameObject TestChildObject;

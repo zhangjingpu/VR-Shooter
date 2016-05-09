@@ -2,7 +2,23 @@
 using System.Collections;
 using System.Collections.Generic; //For List
 
-public class Grab : MonoBehaviour
+
+/*
+    Author: Tung Nguyen
+    Purpose: Basic grab behavior for picking up and throwing objects.
+
+    Last Edit: A. Connor Adam
+    Reason: Small edit to ease intergration into StickController class
+
+    TODO:
+        -Debug
+        -Integrate into StickController 
+*/
+
+
+//Grab should be integrated as a standard part of the StickController class, just to simplify.
+//...But only after it works.
+public class Grab : StickController
 {
     //The object that is grabed
     public GameObject GrabedObject;
@@ -17,10 +33,13 @@ public class Grab : MonoBehaviour
     private Vector3 lastPos;
     [HideInInspector]
     public Vector3 vel;
+<<<<<<< HEAD
 
     //Get access to the controller
     [HideInInspector]
     public StickController Stick;
+=======
+>>>>>>> origin/master
 
     void Start()
     {
@@ -31,7 +50,11 @@ public class Grab : MonoBehaviour
     void FixedUpdate()
     {
         //Tracks the velocity in which will be applied to the throw
+<<<<<<< HEAD
         vel = (transform.position - lastPos) / Time.fixedDeltaTime;
+=======
+        vel = (transform.position - lastPos) / Time.deltaTime;
+>>>>>>> origin/master
         lastPos = transform.position;
 
         UpdateGrab();
@@ -41,7 +64,11 @@ public class Grab : MonoBehaviour
     {
         if (GrabedObject != null)
         {
+<<<<<<< HEAD
             if (Stick.Controller.GetPress(Stick.GripyButton))
+=======
+            if (isHeld(ActivatorButton.GRIPPY))
+>>>>>>> origin/master
             {
                 //Turns to a child
                 GrabedObject.transform.parent = transform;
