@@ -1,18 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/*
-    Author: ??
-    Purpose: ??
-
-    Last Edit: N/A
-    Reason: N/A
-
-    TODO:
-        - N/A
-*/
-
-
 public class TestMultiCollisions : MonoBehaviour
 {
 

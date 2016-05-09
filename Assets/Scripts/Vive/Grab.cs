@@ -2,23 +2,7 @@
 using System.Collections;
 using System.Collections.Generic; //For List
 
-
-/*
-    Author: Tung Nguyen
-    Purpose: Basic grab behavior for picking up and throwing objects.
-
-    Last Edit: A. Connor Adam
-    Reason: Small edit to ease intergration into StickController class
-
-    TODO:
-        -Debug
-        -Integrate into StickController 
-*/
-
-
-//Grab should be integrated as a standard part of the StickController class, just to simplify.
-//...But only after it works.
-public class Grab : StickController
+public class Grab : MonoBehaviour
 {
     //The object that is grabed
     public GameObject GrabedObject;
@@ -33,13 +17,10 @@ public class Grab : StickController
     private Vector3 lastPos;
     [HideInInspector]
     public Vector3 vel;
-<<<<<<< HEAD
 
     //Get access to the controller
     [HideInInspector]
     public StickController Stick;
-=======
->>>>>>> origin/master
 
     void Start()
     {
@@ -50,11 +31,7 @@ public class Grab : StickController
     void FixedUpdate()
     {
         //Tracks the velocity in which will be applied to the throw
-<<<<<<< HEAD
         vel = (transform.position - lastPos) / Time.fixedDeltaTime;
-=======
-        vel = (transform.position - lastPos) / Time.deltaTime;
->>>>>>> origin/master
         lastPos = transform.position;
 
         UpdateGrab();
@@ -64,11 +41,7 @@ public class Grab : StickController
     {
         if (GrabedObject != null)
         {
-<<<<<<< HEAD
             if (Stick.Controller.GetPress(Stick.GripyButton))
-=======
-            if (isHeld(ActivatorButton.GRIPPY))
->>>>>>> origin/master
             {
                 //Turns to a child
                 GrabedObject.transform.parent = transform;
@@ -95,22 +68,26 @@ public class Grab : StickController
                 SetOnce = true;
                 GrabedObject = null;
             }
-
         }
     }
 
     //Collisions
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Grabable"))
+        Transform root = other.transform.root;
+        if (root.gameObject.layer == LayerMask.NameToLayer("Grabable"))
         {
-            if (other.GetComponent<Rigidbody>() != null) GrabedObject = other.gameObject;
+            if (root.GetComponent<Rigidbody>() != null) GrabedObject = root.gameObject;
         }
     }
 
     void OnTriggerStay(Collider other)
     {
-        //if (other.gameObject.layer == LayerMask.NameToLayer("Grabable")) GrabedObject = other.gameObject;
+        //Transform root = other.transform.root;
+        //if (root.gameObject.layer == LayerMask.NameToLayer("Grabable"))
+        //{
+        //    if (root.GetComponent<Rigidbody>() != null) GrabedObject = root.gameObject;
+        //}
     }
 
     void OnTriggerExit(Collider other)
