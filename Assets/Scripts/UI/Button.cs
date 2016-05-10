@@ -58,7 +58,7 @@ public class Button : MonoBehaviour
         //if (GetComponent<SpriteRenderer>() != null) NormalColor = GetComponent<SpriteRenderer>().color;
         //else if (GetComponent<TextMesh>() != null) NormalColor = GetComponent<TextMesh>().color;
         NormalScale = transform.localScale;
-        transform.localScale = new Vector3(0, 0, 1);
+        transform.localScale = new Vector3(0, 0, transform.localScale.z);
         //Assign reset values
         ResetPosition = transform.localPosition;
         ResetRotation = transform.localRotation;
@@ -69,7 +69,7 @@ public class Button : MonoBehaviour
         if (Child != null)
         {
             ChildNormalScale = Child.transform.localScale;
-            Child.transform.localScale = new Vector3(0, 0, 1);
+            Child.transform.localScale = new Vector3(0, 0, Child.transform.localScale.z);
 
             ResetChildPosition = Child.transform.localPosition;
             ResetChildRotation = Child.transform.localRotation;

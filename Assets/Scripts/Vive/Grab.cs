@@ -48,14 +48,16 @@ public class Grab : MonoBehaviour
                 //Set the point of collision at the start of the new child
                 if(SetOnce == true)
                 {
-                    GrabedObjectStart = GrabedObject.transform.localPosition;
+                    GrabedObjectStart = transform.position - GrabedObject.transform.position;
                     SetOnce = false;
                 }
                 //Clamps 0 - 1
                 FollowSmoothness = Mathf.Clamp01(FollowSmoothness);
-                Vector3 Mod = Vector3.SmoothDamp(GrabedObject.transform.localPosition, GrabedObjectStart, ref FollowVelocity, FollowSmoothness);
+                Vector3.SmoothDamp(GrabedObject.transform.position, transform.position - GrabedObjectStart, ref FollowVelocity, FollowSmoothness);
+
 
                 GrabedObject.GetComponent<Rigidbody>().useGravity = false;
+                GrabedObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
                 GrabedObject.GetComponent<Rigidbody>().velocity = FollowVelocity;
                 GrabedObject.GetComponent<Rigidbody>().angularVelocity = new Vector3(0, 0, 0);
                 GrabedObject.transform.rotation = transform.rotation;
