@@ -108,6 +108,10 @@ public class GlobalVars : MonoBehaviour
             else DebugMode = true;
         }
 
+        //Health
+        if (Input.GetKeyDown(KeyCode.B)) CurrentHealth += 5;
+        if (Input.GetKeyDown(KeyCode.V)) CurrentHealth -= 5;
+
         //Reload the scene
         if (Input.GetButtonDown("Home")) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 

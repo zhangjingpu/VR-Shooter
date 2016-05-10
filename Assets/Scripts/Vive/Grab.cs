@@ -77,9 +77,11 @@ public class Grab : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Transform root = other.transform.root;
-        if (root.gameObject.layer == LayerMask.NameToLayer("Grabable"))
+        //Take in even if its a child
+        if (other.gameObject.layer == LayerMask.NameToLayer("Grabable"))
         {
-            if (root.GetComponent<Rigidbody>() != null) GrabedObject = root.gameObject;
+            //Set the object's root as GrabedObject
+            if (root.GetComponent<Rigidbody>() != null && GrabedObject == null) GrabedObject = root.gameObject;
         }
     }
 

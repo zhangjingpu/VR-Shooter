@@ -35,10 +35,14 @@ public class SteamVR_BasicTeleport : MonoBehaviour {
 
     protected virtual void DoTeleport(object sender, WorldPointerEventArgs e)
     {
+        //var rect = new HmdQuad_t();
+        //SteamVR_PlayArea center = new HmdVector3_t[] { rect.vCorners0, rect.vCorners1, rect.vCorners2, rect.vCorners3 };
+
         if (e.target)
         {
             Blink();
             Vector3 newPosition = GetNewPosition(e.destinationPosition, e.target);
+          //  Vector3 newPosition = GetNewPosition(e.destinationPosition, center.Length / 2);
             SetNewPosition(newPosition, e.target);
         }
     }

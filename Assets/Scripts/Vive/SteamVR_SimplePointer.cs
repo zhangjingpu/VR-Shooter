@@ -148,7 +148,8 @@ public class SteamVR_SimplePointer : SteamVR_WorldPointer
     private void Update () {
         if (pointer.gameObject.activeSelf)
         {
-            Ray pointerRaycast = new Ray(transform.position, transform.forward);
+            GameObject startGameobject = GameObject.Find("Camera (eye)");
+            Ray pointerRaycast = new Ray(startGameobject.transform.position, startGameobject.transform.forward);
             RaycastHit pointerCollidedWith;
             bool rayHit = Physics.Raycast(pointerRaycast, out pointerCollidedWith);
             float pointerBeamLength = GetPointerBeamLength(rayHit, pointerCollidedWith);
