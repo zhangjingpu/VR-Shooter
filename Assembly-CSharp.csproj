@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{ABC21233-D2AE-1975-DC52-EAD2467BDDE4}</ProjectGuid>
+    <ProjectGuid>{45C5FA51-59D3-B219-ADCC-0312299E59D8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,9 +45,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Backup\Grab1.cs" />
+     <Compile Include="Assets\Scripts\Backup\GrabableItem1.cs" />
      <Compile Include="Assets\Scripts\Environment\GlobalVars.cs" />
      <Compile Include="Assets\Scripts\Environment\LevelTracker.cs" />
+     <Compile Include="Assets\Scripts\Items\GunController.cs" />
+     <Compile Include="Assets\Scripts\Items\UseableObject.cs" />
+     <Compile Include="Assets\Scripts\Test\ObjectGrabSimulation.cs" />
+     <Compile Include="Assets\Scripts\UI\Button.cs" />
+     <Compile Include="Assets\Scripts\UI\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\UI\StatBar.cs" />
+     <Compile Include="Assets\Scripts\UI\TeleportPoint.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UISubManager.cs" />
+     <Compile Include="Assets\Scripts\Vive\EquipObject.cs" />
+     <Compile Include="Assets\Scripts\Vive\Grab.cs" />
+     <Compile Include="Assets\Scripts\Vive\InventorySlot.cs" />
+     <Compile Include="Assets\Scripts\Vive\SteamVR_BasicTeleport.cs" />
+     <Compile Include="Assets\Scripts\Vive\SteamVR_ControllerEvents.cs" />
+     <Compile Include="Assets\Scripts\Vive\SteamVR_HeadsetCollisionFade.cs" />
+     <Compile Include="Assets\Scripts\Vive\SteamVR_HeightAdjustTeleport.cs" />
+     <Compile Include="Assets\Scripts\Vive\SteamVR_SimplePointer.cs" />
+     <Compile Include="Assets\Scripts\Vive\SteamVR_WorldPointer.cs" />
      <Compile Include="Assets\Scripts\Vive\StickController.cs" />
+     <Compile Include="Assets\Scripts\Vive\TestMultiCollisions.cs" />
+     <Compile Include="Assets\Scripts\Vive\World_Pointer.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
@@ -72,6 +94,7 @@
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_Render.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_RenderModel.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_Skybox.cs" />
+     <Compile Include="Assets\SteamVR\Scripts\SteamVR_SphericalProjection.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_Stats.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_Status.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_StatusText.cs" />
@@ -120,6 +143,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\Shaders\Unlit_TransparentColor.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
@@ -147,6 +171,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
+     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
@@ -174,7 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{C894C3B8-4CEA-488F-ABFA-135BF197F331}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{4E70C744-21DE-BF1E-230B-48A7B519C99B}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

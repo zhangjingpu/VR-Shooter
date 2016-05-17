@@ -37,6 +37,16 @@ public class Button : MonoBehaviour
     public float ChildShrinkSpeed = 0.1f;
     public float ChildExpandSpeed = 0.1f;
 
+    //Override
+    [HideInInspector]
+    public bool StopPressIdle = false;
+    [HideInInspector]
+    public bool StopPressDown = false;
+    [HideInInspector]
+    public bool StopPressHold = false;
+    [HideInInspector]
+    public bool StopPressUp = false;
+
     //Reset Values
     private Vector3 ResetPosition;
     private Quaternion ResetRotation;
@@ -85,46 +95,76 @@ public class Button : MonoBehaviour
         //If button just woke but was not pressed yet
         if (IsActive == true && IsPressedDown == false && IsPressedUp == false && IsPressedHeld == false)
         {
-            ExpandScale(NormalScale);
-            if (GetComponent<SpriteRenderer>() != null) GetComponent<SpriteRenderer>().color = ResetColor;
-            else if (GetComponent<TextMesh>() != null) GetComponent<TextMesh>().color = ResetColor;
-            if (Child != null)
+            if (StopPressIdle == false)
             {
-                ExpandChildScale(ChildNormalScale);
-                if (Child.GetComponent<SpriteRenderer>() != null) Child.GetComponent<SpriteRenderer>().color = ResetChildColor;
-                else if (Child.GetComponent<TextMesh>() != null) Child.GetComponent<TextMesh>().color = ResetChildColor;
+                bool finishedObject = false;
+                bool finishedChildObject = false;
+
+                if(ExpandScale(NormalScale) == true) finishedObject = true;
+                if (GetComponent<SpriteRenderer>() != null) GetComponent<SpriteRenderer>().color = ResetColor;
+                else if (GetComponent<TextMesh>() != null) GetComponent<TextMesh>().color = ResetColor;
+                if (Child != null)
+                {
+                    if (ExpandChildScale(ChildNormalScale) == true) finishedChildObject = true;
+                    if (Child.GetComponent<SpriteRenderer>() != null) Child.GetComponent<SpriteRenderer>().color = ResetChildColor;
+                    else if (Child.GetComponent<TextMesh>() != null) Child.GetComponent<TextMesh>().color = ResetChildColor;
+                }
+                else finishedChildObject = true;
+                if (finishedObject == true && finishedChildObject == true) StopPressIdle = true;
             }
         }
+        else StopPressIdle = false;
+
         //If button was pressed down
-        else if (IsActive == true && IsPressedDown == true)
+        if (IsActive == true && IsPressedDown == true)
         {
-            ExpandScale(NormalScale + HoverScale);
-            if (GetComponent<SpriteRenderer>() != null) GetComponent<SpriteRenderer>().color = HoverColor;
-            else if (GetComponent<TextMesh>() != null) GetComponent<TextMesh>().color = HoverColor;
-            if (Child != null)
+            if (StopPressDown == false)
             {
-                ExpandChildScale(ChildNormalScale + ChildHoverScale);
-                if (Child.GetComponent<SpriteRenderer>() != null) Child.GetComponent<SpriteRenderer>().color = ChildHoverColor;
-                else if (Child.GetComponent<TextMesh>() != null) Child.GetComponent<TextMesh>().color = ChildHoverColor;
+                bool finishedObject = false;
+                bool finishedChildObject = false;
+
+                if(ExpandScale(NormalScale + HoverScale) == true) finishedObject = true;
+                if (GetComponent<SpriteRenderer>() != null) GetComponent<SpriteRenderer>().color = HoverColor;
+                else if (GetComponent<TextMesh>() != null) GetComponent<TextMesh>().color = HoverColor;
+                if (Child != null)
+                {
+                    if(ExpandChildScale(ChildNormalScale + ChildHoverScale) == true) finishedChildObject = true;
+                    if (Child.GetComponent<SpriteRenderer>() != null) Child.GetComponent<SpriteRenderer>().color = ChildHoverColor;
+                    else if (Child.GetComponent<TextMesh>() != null) Child.GetComponent<TextMesh>().color = ChildHoverColor;
+                }
+                else finishedChildObject = true;
+                if (finishedObject == true && finishedChildObject == true) StopPressDown = true;
             }
             OnPressedDown.Invoke();
         }
+        else StopPressDown = false;
+
         //If button is held down
-        else if (IsActive == true && IsPressedHeld == true) OnHeld.Invoke();
+        if (IsActive == true && IsPressedHeld == true) OnHeld.Invoke();
+
         //If button was pressed up
-        else if (IsActive == true && IsPressedUp == true)
+        if (IsActive == true && IsPressedUp == true)
         {
-            ShrinkScale(NormalScale);
-            if (GetComponent<SpriteRenderer>() != null) GetComponent<SpriteRenderer>().color = ResetColor;
-            else if (GetComponent<TextMesh>() != null) GetComponent<TextMesh>().color = ResetColor;
-            if (Child != null)
+            if (StopPressUp == false)
             {
-                ShrinkChildScale(ChildNormalScale);
-                if (Child.GetComponent<SpriteRenderer>() != null) Child.GetComponent<SpriteRenderer>().color = ResetChildColor;
-                else if (Child.GetComponent<TextMesh>() != null) Child.GetComponent<TextMesh>().color = ResetChildColor;
+                bool finishedObject = false;
+                bool finishedChildObject = false;
+
+                if(ShrinkScale(NormalScale) == true) finishedObject = true;
+                if (GetComponent<SpriteRenderer>() != null) GetComponent<SpriteRenderer>().color = ResetColor;
+                else if (GetComponent<TextMesh>() != null) GetComponent<TextMesh>().color = ResetColor;
+                if (Child != null)
+                {
+                    if(ShrinkChildScale(ChildNormalScale) == true) finishedChildObject = true;
+                    if (Child.GetComponent<SpriteRenderer>() != null) Child.GetComponent<SpriteRenderer>().color = ResetChildColor;
+                    else if (Child.GetComponent<TextMesh>() != null) Child.GetComponent<TextMesh>().color = ResetChildColor;
+                }
+                else finishedChildObject = true;
+                if (finishedObject == true && finishedChildObject == true) StopPressUp = true;
             }
             OnPressedUp.Invoke();
         }
+        else StopPressUp = false;
     }
 
     //Go to the selected level

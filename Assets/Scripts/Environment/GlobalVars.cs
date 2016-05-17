@@ -24,6 +24,7 @@ public class GlobalVars : MonoBehaviour
     //Stats
     public float MaxHealth = 100;
     public float CurrentHealth = 100;
+    public float PreviousHealth = 100;
     public float MaxEnergy = 100;
     public float CurrentEnergy = 100;
 
@@ -57,6 +58,12 @@ public class GlobalVars : MonoBehaviour
         //Health Regen
         if(CurrentHealth < MaxHealth)
         {
+            if(CurrentHealth < PreviousHealth)
+            {
+                StartHealthRegen = false;
+                HealthRegenStartTimer = 0;
+            }
+
             if (StartHealthRegen == false)
             {
                 HealthRegenStartTimer += Time.deltaTime;
@@ -76,11 +83,13 @@ public class GlobalVars : MonoBehaviour
                     EnergyRegenTimer = 0;
                 }
             }
+            PreviousHealth = CurrentHealth;
         }
         else
         {
             if (StartHealthRegen == true)
             {
+                PreviousHealth = MaxHealth;
                 HealthRegenStartTimer = 0;
                 StartHealthRegen = false;
             }
@@ -109,8 +118,10 @@ public class GlobalVars : MonoBehaviour
         }
 
         //Health
-        if (Input.GetKeyDown(KeyCode.B)) CurrentHealth += 5;
-        if (Input.GetKeyDown(KeyCode.V)) CurrentHealth -= 5;
+        if (Input.GetKeyDown(KeyCode.H)) CurrentHealth += 5;
+        if (Input.GetKeyDown(KeyCode.G)) CurrentHealth -= 5;
+        if (Input.GetKeyDown(KeyCode.B)) CurrentEnergy += 5;
+        if (Input.GetKeyDown(KeyCode.V)) CurrentEnergy -= 5;
 
         //Reload the scene
         if (Input.GetButtonDown("Home")) SceneManager.LoadScene(SceneManager.GetActiveScene().name);

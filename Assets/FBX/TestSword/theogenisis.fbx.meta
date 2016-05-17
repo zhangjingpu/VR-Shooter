@@ -1,0 +1,346 @@
+fileFormatVersion: 2
+guid: ebf46c07214926c47bf225242d14d391
+timeCreated: 1463444870
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: group1
+    100002: theo2:group20
+    100004: theo2:thegenesis:thegenesis:group1
+    100006: theo2:thegenesis:thegenesis:group3
+    100008: theo2:thegenesis:thegenesis:group7
+    100010: theo2:thegenesis:thegenesis:polySurface39
+    100012: theo2:thegenesis:thegenesis:polySurface40
+    100014: theo2:thegenesis:thegenesis:polySurface40 1
+    100016: theo2:thegenesis:thegenesis:polySurface41
+    100018: theo2:thegenesis:thegenesis:polySurface42
+    100020: theo2:thegenesis:thegenesis:polySurface42 1
+    100022: theo2:thegenesis:thegenesis:polySurface43
+    100024: theo2:thegenesis:thegenesis:polySurface44
+    100026: theo2:thegenesis:thegenesis:polySurface44 1
+    100028: theo2:thegenesis:thegenesis:polySurface45
+    100030: theo2:thegenesis:thegenesis:polySurface46
+    100032: theo2:thegenesis:thegenesis:polySurface46 1
+    100034: theo2:thegenesis:thegenesis:polySurface47
+    100036: theo2:thegenesis:thegenesis:polySurface48
+    100038: theo2:thegenesis:thegenesis:polySurface48 1
+    100040: theo2:thegenesis:thegenesis:polySurface49
+    100042: theo2:thegenesis:thegenesis:polySurface50
+    100044: theo2:thegenesis:thegenesis:polySurface50 1
+    100046: theo2:thegenesis:thegenesis:polySurface51
+    100048: theo2:thegenesis:thegenesis:polySurface52
+    100050: theo2:thegenesis:thegenesis:polySurface53
+    100052: theo2:thegenesis:thegenesis:polySurface54
+    100054: theo2:thegenesis:thegenesis:polySurface55
+    100056: theo2:thegenesis:thegenesis:polySurface56
+    100058: theo2:thegenesis:thegenesis:polySurface57
+    100060: theo2:thegenesis:thegenesis:polySurface58
+    100062: theo2:thegenesis:thegenesis:polySurface59
+    100064: theo2:thegenesis:thegenesis:polySurface60
+    100066: theo2:thegenesis:thegenesis:polySurface61
+    100068: theo2:thegenesis:thegenesis:polySurface62
+    100070: theo2:thegenesis:thegenesis:polySurface63
+    100072: theo2:thegenesis:thegenesis:polySurface64
+    100074: theo2:thegenesis:thegenesis:polySurface65
+    100076: theo2:thegenesis:thegenesis:polySurface66
+    100078: theo2:thegenesis:thegenesis:polySurface67
+    100080: theo2:thegenesis:thegenesis:polySurface68
+    100082: theo2:thegenesis:thegenesis:thegenesis:thegenesis:group25
+    100084: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface16
+    100086: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface30
+    100088: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface31
+    100090: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface32
+    100092: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface32 1
+    100094: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface34
+    100096: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface35
+    100098: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface36
+    100100: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface37
+    100102: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface38
+    100104: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface39
+    100106: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface39 1
+    100108: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface40
+    100110: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface42
+    100112: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface44
+    100114: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface46
+    100116: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface47
+    100118: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface48
+    100120: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface49
+    100122: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface50
+    100124: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface51
+    100126: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface52
+    100128: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface53
+    100130: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface54
+    100132: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface55
+    100134: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface56
+    100136: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface57
+    100138: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:polySurface34
+    100140: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:polySurface55
+    100142: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform1
+    100144: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform10
+    100146: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform11
+    100148: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform12
+    100150: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform13
+    100152: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform14
+    100154: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform15
+    100156: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform2
+    100158: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform3
+    100160: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform4
+    100162: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform5
+    100164: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform6
+    100166: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform7
+    100168: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform8
+    100170: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform9
+    100172: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform60
+    100174: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform61
+    100176: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform62
+    100178: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform63
+    100180: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform64
+    100182: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform65
+    100184: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform66
+    100186: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform67
+    100188: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform68
+    100190: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform69
+    100192: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform70
+    100194: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform71
+    100196: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform72
+    100198: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform73
+    100200: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform74
+    100202: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform75
+    100204: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform76
+    100206: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform77
+    100208: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform78
+    100210: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform79
+    100212: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform80
+    100214: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform81
+    100216: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform82
+    100218: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform83
+    100220: theo2:thegenesis:thegenesis:transform1
+    100222: theo2:thegenesis:thegenesis:transform10
+    100224: theo2:thegenesis:thegenesis:transform11
+    100226: theo2:thegenesis:thegenesis:transform12
+    100228: theo2:thegenesis:thegenesis:transform13
+    100230: theo2:thegenesis:thegenesis:transform14
+    100232: theo2:thegenesis:thegenesis:transform15
+    100234: theo2:thegenesis:thegenesis:transform16
+    100236: theo2:thegenesis:thegenesis:transform17
+    100238: theo2:thegenesis:thegenesis:transform18
+    100240: theo2:thegenesis:thegenesis:transform19
+    100242: theo2:thegenesis:thegenesis:transform2
+    100244: theo2:thegenesis:thegenesis:transform20
+    100246: theo2:thegenesis:thegenesis:transform21
+    100248: theo2:thegenesis:thegenesis:transform22
+    100250: theo2:thegenesis:thegenesis:transform23
+    100252: theo2:thegenesis:thegenesis:transform24
+    100254: theo2:thegenesis:thegenesis:transform3
+    100256: theo2:thegenesis:thegenesis:transform4
+    100258: theo2:thegenesis:thegenesis:transform5
+    100260: theo2:thegenesis:thegenesis:transform6
+    100262: theo2:thegenesis:thegenesis:transform7
+    100264: theo2:thegenesis:thegenesis:transform8
+    100266: theo2:thegenesis:thegenesis:transform9
+    100268: //RootNode
+    400000: group1
+    400002: theo2:group20
+    400004: theo2:thegenesis:thegenesis:group1
+    400006: theo2:thegenesis:thegenesis:group3
+    400008: theo2:thegenesis:thegenesis:group7
+    400010: theo2:thegenesis:thegenesis:polySurface39
+    400012: theo2:thegenesis:thegenesis:polySurface40
+    400014: theo2:thegenesis:thegenesis:polySurface40 1
+    400016: theo2:thegenesis:thegenesis:polySurface41
+    400018: theo2:thegenesis:thegenesis:polySurface42
+    400020: theo2:thegenesis:thegenesis:polySurface42 1
+    400022: theo2:thegenesis:thegenesis:polySurface43
+    400024: theo2:thegenesis:thegenesis:polySurface44
+    400026: theo2:thegenesis:thegenesis:polySurface44 1
+    400028: theo2:thegenesis:thegenesis:polySurface45
+    400030: theo2:thegenesis:thegenesis:polySurface46
+    400032: theo2:thegenesis:thegenesis:polySurface46 1
+    400034: theo2:thegenesis:thegenesis:polySurface47
+    400036: theo2:thegenesis:thegenesis:polySurface48
+    400038: theo2:thegenesis:thegenesis:polySurface48 1
+    400040: theo2:thegenesis:thegenesis:polySurface49
+    400042: theo2:thegenesis:thegenesis:polySurface50
+    400044: theo2:thegenesis:thegenesis:polySurface50 1
+    400046: theo2:thegenesis:thegenesis:polySurface51
+    400048: theo2:thegenesis:thegenesis:polySurface52
+    400050: theo2:thegenesis:thegenesis:polySurface53
+    400052: theo2:thegenesis:thegenesis:polySurface54
+    400054: theo2:thegenesis:thegenesis:polySurface55
+    400056: theo2:thegenesis:thegenesis:polySurface56
+    400058: theo2:thegenesis:thegenesis:polySurface57
+    400060: theo2:thegenesis:thegenesis:polySurface58
+    400062: theo2:thegenesis:thegenesis:polySurface59
+    400064: theo2:thegenesis:thegenesis:polySurface60
+    400066: theo2:thegenesis:thegenesis:polySurface61
+    400068: theo2:thegenesis:thegenesis:polySurface62
+    400070: theo2:thegenesis:thegenesis:polySurface63
+    400072: theo2:thegenesis:thegenesis:polySurface64
+    400074: theo2:thegenesis:thegenesis:polySurface65
+    400076: theo2:thegenesis:thegenesis:polySurface66
+    400078: theo2:thegenesis:thegenesis:polySurface67
+    400080: theo2:thegenesis:thegenesis:polySurface68
+    400082: theo2:thegenesis:thegenesis:thegenesis:thegenesis:group25
+    400084: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface16
+    400086: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface30
+    400088: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface31
+    400090: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface32
+    400092: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface32 1
+    400094: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface34
+    400096: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface35
+    400098: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface36
+    400100: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface37
+    400102: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface38
+    400104: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface39
+    400106: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface39 1
+    400108: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface40
+    400110: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface42
+    400112: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface44
+    400114: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface46
+    400116: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface47
+    400118: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface48
+    400120: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface49
+    400122: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface50
+    400124: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface51
+    400126: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface52
+    400128: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface53
+    400130: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface54
+    400132: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface55
+    400134: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface56
+    400136: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface57
+    400138: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:polySurface34
+    400140: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:polySurface55
+    400142: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform1
+    400144: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform10
+    400146: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform11
+    400148: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform12
+    400150: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform13
+    400152: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform14
+    400154: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform15
+    400156: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform2
+    400158: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform3
+    400160: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform4
+    400162: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform5
+    400164: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform6
+    400166: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform7
+    400168: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform8
+    400170: theo2:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:thegenesis:transform9
+    400172: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform60
+    400174: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform61
+    400176: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform62
+    400178: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform63
+    400180: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform64
+    400182: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform65
+    400184: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform66
+    400186: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform67
+    400188: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform68
+    400190: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform69
+    400192: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform70
+    400194: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform71
+    400196: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform72
+    400198: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform73
+    400200: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform74
+    400202: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform75
+    400204: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform76
+    400206: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform77
+    400208: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform78
+    400210: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform79
+    400212: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform80
+    400214: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform81
+    400216: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform82
+    400218: theo2:thegenesis:thegenesis:thegenesis:thegenesis:transform83
+    400220: theo2:thegenesis:thegenesis:transform1
+    400222: theo2:thegenesis:thegenesis:transform10
+    400224: theo2:thegenesis:thegenesis:transform11
+    400226: theo2:thegenesis:thegenesis:transform12
+    400228: theo2:thegenesis:thegenesis:transform13
+    400230: theo2:thegenesis:thegenesis:transform14
+    400232: theo2:thegenesis:thegenesis:transform15
+    400234: theo2:thegenesis:thegenesis:transform16
+    400236: theo2:thegenesis:thegenesis:transform17
+    400238: theo2:thegenesis:thegenesis:transform18
+    400240: theo2:thegenesis:thegenesis:transform19
+    400242: theo2:thegenesis:thegenesis:transform2
+    400244: theo2:thegenesis:thegenesis:transform20
+    400246: theo2:thegenesis:thegenesis:transform21
+    400248: theo2:thegenesis:thegenesis:transform22
+    400250: theo2:thegenesis:thegenesis:transform23
+    400252: theo2:thegenesis:thegenesis:transform24
+    400254: theo2:thegenesis:thegenesis:transform3
+    400256: theo2:thegenesis:thegenesis:transform4
+    400258: theo2:thegenesis:thegenesis:transform5
+    400260: theo2:thegenesis:thegenesis:transform6
+    400262: theo2:thegenesis:thegenesis:transform7
+    400264: theo2:thegenesis:thegenesis:transform8
+    400266: theo2:thegenesis:thegenesis:transform9
+    400268: //RootNode
+    2300000: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface32
+    3300000: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface32
+    4300000: theo2:thegenesis:thegenesis:thegenesis:thegenesis:polySurface32
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 6
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,6 +6,7 @@ public class Grab : MonoBehaviour
 {
     //The object that is grabed
     public GameObject GrabedObject;
+    public GameObject GrabedObjectChild;
 
     //Maintaining physics for grabed objects
     public float FollowSmoothness = 0.01f;
@@ -43,6 +44,13 @@ public class Grab : MonoBehaviour
         {
             if (Stick.Controller.GetPress(Stick.GripyButton))
             {
+                //Unequip
+                GrabedObjectChild.GetComponent<EquipObject>().isHeld = true;
+                if(GrabedObjectChild.GetComponent<EquipObject>().isEquiped == true)
+                {
+                    GrabedObject.GetComponent<Rigidbody>().isKinematic = false;
+                    GrabedObjectChild.GetComponent<EquipObject>().isEquiped = false;
+                }
                 //Turns to a child
                 GrabedObject.transform.parent = transform;
                 //Set the point of collision at the start of the new child
@@ -62,13 +70,16 @@ public class Grab : MonoBehaviour
                 GrabedObject.GetComponent<Rigidbody>().angularVelocity = new Vector3(0, 0, 0);
                 GrabedObject.transform.rotation = transform.rotation;
             }
-            else
+
+            if (Stick.Controller.GetPressUp(Stick.GripyButton))
             {
-                GrabedObject.transform.SetParent(null);
+                GrabedObject.transform.SetParent(null);  
                 GrabedObject.GetComponent<Rigidbody>().useGravity = true;
                 GrabedObject.GetComponent<Rigidbody>().AddForce(vel * 100);
                 SetOnce = true;
+                GrabedObjectChild.GetComponent<EquipObject>().isHeld = false;
                 GrabedObject = null;
+                GrabedObjectChild = null;
             }
         }
     }
@@ -76,26 +87,15 @@ public class Grab : MonoBehaviour
     //Collisions
     void OnTriggerEnter(Collider other)
     {
-        Transform root = other.transform.root;
         //Take in even if its a child
         if (other.gameObject.layer == LayerMask.NameToLayer("Grabable"))
         {
             //Set the object's root as GrabedObject
-            if (root.GetComponent<Rigidbody>() != null && GrabedObject == null) GrabedObject = root.gameObject;
+            if (other.GetComponent<EquipObject>().Root.GetComponent<Rigidbody>() != null && GrabedObject == null)
+            {
+                GrabedObject = other.GetComponent<EquipObject>().Root.gameObject;
+                GrabedObjectChild = other.gameObject;
+            }
         }
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        //Transform root = other.transform.root;
-        //if (root.gameObject.layer == LayerMask.NameToLayer("Grabable"))
-        //{
-        //    if (root.GetComponent<Rigidbody>() != null) GrabedObject = root.gameObject;
-        //}
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        //if (other.gameObject.layer == LayerMask.NameToLayer("Grabable")) GrabedObject = null;
     }
 }

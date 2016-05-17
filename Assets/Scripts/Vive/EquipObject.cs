@@ -10,14 +10,14 @@ public class EquipObject : MonoBehaviour
     [HideInInspector]
     //Is it equiped to the inventory slot?
     public bool isEquiped = false;
+    [HideInInspector]
+    //is this object currently grabbed?
+    public bool isHeld = false;
+    [HideInInspector]
+    public GameObject Root;
 
-    void Start ()
+    void Start()
     {
-	
-	}
-	
-	void Update ()
-    {
-	
-	}
+        Root = transform.root.gameObject;
+    }
 }
